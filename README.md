@@ -1,70 +1,94 @@
-Chem-Equipment Analytics
+# Chem-Equipment Analytics  
+**Web & Desktop Data Visualization Tool**
 
-Web & Desktop Data Visualization Tool
+## Overview
+**Chem-Equipment Analytics** is a hybrid **web and desktop application** for analyzing chemical equipment data from CSV files.  
+A shared **Django REST API** processes the data and serves analytics to both a **React web dashboard** and a **PyQt5 desktop application**.
 
-Overview
+---
 
-Chem-Equipment Analytics is a hybrid web + desktop application for analyzing chemical equipment data from CSV files.
-It uses a shared Django REST API to process data and deliver analytics to both a React web dashboard and a PyQt5 desktop app.
+## Tech Stack
+- **Backend:** Django, Django REST Framework, Pandas, SQLite  
+- **Web:** React, Axios, Chart.js  
+- **Desktop:** PyQt5, Matplotlib  
 
-Tech Stack
+---
 
-Backend: Django, Django REST Framework, Pandas, SQLite
+## Features
+- CSV upload (Web & Desktop)
+- Equipment summary statistics
+- Equipment type distribution
+- Interactive charts (Web)
+- Native plots (Desktop)
+- PDF report generation
+- Single backend API for both clients
 
-Web: React, Axios, Chart.js
+---
 
-Desktop: PyQt5, Matplotlib
+## Project Structure
+# Chem-Equipment Analytics  
+**Web & Desktop Data Visualization Tool**
 
-Features
+## Overview
+**Chem-Equipment Analytics** is a hybrid **web and desktop application** for analyzing chemical equipment data from CSV files.  
+A shared **Django REST API** processes the data and serves analytics to both a **React web dashboard** and a **PyQt5 desktop application**.
 
-CSV upload (Web & Desktop)
+---
 
-Equipment statistics and averages
+## Tech Stack
+- **Backend:** Django, Django REST Framework, Pandas, SQLite  
+- **Web:** React, Axios, Chart.js  
+- **Desktop:** PyQt5, Matplotlib  
 
-Equipment type distribution
+---
 
-Interactive charts (Web)
+## Features
+- CSV upload (Web & Desktop)
+- Equipment summary statistics
+- Equipment type distribution
+- Interactive charts (Web)
+- Native plots (Desktop)
+- PDF report generation
+- Single backend API for both clients
 
-Native plots (Desktop)
+---
 
-PDF report generation
-
-Shared backend API for both clients
-
-Project Structure
+## Project Structure
 chem-equipment-analytics/
-├── backend/    # Django API
-├── frontend/   # React app
-├── desktop/    # PyQt5 app
+├── backend/ # Django API
+├── frontend/ # React app
+├── desktop/ # PyQt5 app
 └── README.md
 
-Sample CSV
+---
+
+## Sample CSV
 Equipment Name,Type,Flowrate,Pressure,Temperature
 Pump-1,Pump,120,5.2,110
 
-Run Instructions
-Backend
+
+---
+
+## Run Instructions
+
+### Backend
+``bash
 cd backend
 python manage.py migrate
 python manage.py runserver
-
-Web App
+Web Application
 cd frontend
 npm install
 npm start
-
-Desktop App
+Desktop Application
 cd desktop
 python main.py
-
-API
-
+API Endpoints
 POST /api/upload/ – Upload CSV
 
 GET /api/report/ – Download PDF report
 
 Status
-
 UI improvements in progress
 
 Authentication planned
