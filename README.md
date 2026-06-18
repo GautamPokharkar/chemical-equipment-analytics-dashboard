@@ -89,6 +89,6 @@ POST /api/upload/ – Upload CSV
 GET /api/report/ – Download PDF report
 
 Status
-UI improvements in progress
+UI improvements in progress.
 
-Authentication planned
+Authentication planned.
