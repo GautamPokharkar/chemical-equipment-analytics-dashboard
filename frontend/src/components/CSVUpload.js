@@ -5,17 +5,14 @@ function CSVUpload({ onDataReceived, onUploadStart, isLoading }) {
   const [file, setFile] = useState(null);
 
   const handleUpload = async () => {
-    if (!file || isLoading) return;
+  const formData = new FormData();
+  formData.append("file", file);
 
-    onUploadStart?.();
-
-    const formData = new FormData();
-    formData.append("file", file);
-
-    const response = await axios.post(
-      "http://127.0.0.1:8000/api/upload/",
-      formData
-    );
+  const response = await axios.post(
+    "/api/upload/",
+    formData
+  );
+};
 
     onDataReceived(response.data);
   };
