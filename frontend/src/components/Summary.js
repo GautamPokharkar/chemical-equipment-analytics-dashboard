@@ -10,8 +10,8 @@ function Summary({ data }) {
   };
 
   const downloadPDF = () => {
-    window.open("http://127.0.0.1:8000/api/report/", "_blank");
-  };
+  window.open("/api/report/", "_blank");
+};
 
   return (
     <div style={{ maxWidth: "400px", marginTop: "20px" }}>
