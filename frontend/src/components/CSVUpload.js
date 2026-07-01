@@ -5,16 +5,21 @@ function CSVUpload({ onDataReceived, onUploadStart, isLoading }) {
   const [file, setFile] = useState(null);
 
   const handleUpload = async () => {
-  const formData = new FormData();
-  formData.append("file", file);
+    if (!file || isLoading) return;
 
-  const response = await axios.post(
-    "/api/upload/",
-    formData
-  );
-};
+    try {
+      onUploadStart?.();
 
-    onDataReceived(response.data);
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await axios.post("/api/upload/", formData);
+
+      onDataReceived(response.data);
+    } catch (error) {
+      console.error("Upload failed:", error);
+      alert("Failed to upload CSV.");
+    }
   };
 
   return (
